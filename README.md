@@ -36,3 +36,11 @@ loadimage(e) {
     this.cropper.imgReset();
 },
 ```
+#### json
+```json
+{
+    "usingComponents": {
+    "image-cropper": "./image-cropper/image-cropper"
+  },
+}
+```
