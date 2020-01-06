@@ -942,6 +942,8 @@ Component({
         var xpos = this.data._img_left - this.data.cut_left;
         var ypos = this.data._img_top - this.data.cut_top;
 
+        this.data.ctx.save();
+
         //旋转画布
         this.data.ctx.translate(
           xpos * this.data.export_scale,
@@ -958,13 +960,12 @@ Component({
         this.data.ctx.draw(false, function(e) {
           callback && callback();
         });
-        this.data.ctx.rotate(-(this.data.angle * Math.PI) / 180);
-        this.data.ctx.translate(
-          -xpos * this.data.export_scale,
-          -ypos * this.data.export_scale
-        );
-        // ctx.draw()
-        // callback && callback();
+        // this.data.ctx.rotate(-(this.data.angle * Math.PI) / 180);
+        // this.data.ctx.translate(
+        //   -xpos * this.data.export_scale,
+        //   -ypos * this.data.export_scale
+        // );
+        this.data.ctx.restore();
       };
       if (
         this.data.ctx.width != this.data.width ||
