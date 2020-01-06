@@ -2,6 +2,9 @@
 * 去除了裁剪动画，动画在支付宝小程序会有卡顿  
 * 修改了组件属性和方法 适用于支付宝小程序
 * 支付宝小程序使用了 ref来获取组件，开发工具选项勾选 `启用component2编译`
+* 注意支付宝小程序里的 canvas 组件id  `支付宝<canvas id='image-cropper'>` 和微信的区别`微信<canvas canvas-id='image-cropper'>`
+* 支付宝小程序旋转或者移动canvas的画布后需要还原
+
 #### axml
 ```html
 <image-cropper a:if="{{show}}" ref="imagecropper" id="image-cropper" limit_move="{{true}}" disable_rotate="{{true}}" width="{{width}}" height="{{height}}" imgSrc="{{src}}" bindload="cropperload" onLoadimage="loadimage" onClickcut="clickcut"></image-cropper>
